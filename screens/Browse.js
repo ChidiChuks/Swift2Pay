@@ -113,7 +113,7 @@ export default class Browse extends Component {
           <RefreshControl refreshing={false} onRefresh={() => this.getLoggedInUser()} />
         }
       >
-   <ImageBackground source={require('../assets/images/bg/background.png')} style={styles.backgroundImage}>
+      <ImageBackground source={require('../assets/images/bg/background.png')} style={styles.backgroundImage}>
    <View style={{margin: 25}}>
 
      <Text style={[styles.textTwo, {marginBottom: 15, color: 'black'}]}> Hi, {this.state.first_name} {this.state.last_name}</Text> 
@@ -146,7 +146,7 @@ export default class Browse extends Component {
 
      <Text style={styles.browse}>Browse</Text>
 
-     <ScrollView style={{width: '100%'}} >
+     {/* <ScrollView style={{width: '100%'}} > */}
 
       <View style={styles.view} >
 
@@ -164,16 +164,16 @@ export default class Browse extends Component {
           </Card> 
         </TouchableOpacity>
 
-      </View>
-
-      <View style={styles.view}>
-
-       <TouchableOpacity onPress={() => navigate('BillPayment')}>
+        <TouchableOpacity onPress={() => navigate('BillPayment')}>
         <Card style={styles.card}>
           <Image source={require('../assets/images/browse-icons/bill-payment.png')} style={styles.image} />
           <Text style={styles.text}>Bill Payment</Text>
         </Card>
        </TouchableOpacity>
+
+      </View>
+
+      <View style={styles.view}>
 
        <TouchableOpacity onPress={() => navigate('WalletTransfer')}>
         <Card style={styles.card} >
@@ -181,10 +181,6 @@ export default class Browse extends Component {
           <Text style={styles.text}>Wallet Transfer</Text>
         </Card>
        </TouchableOpacity>
-
-      </View>
-
-      <View style={styles.view}>
 
        <TouchableOpacity onPress={() => navigate('BankTransfer')}>
         <Card style={styles.card}>
@@ -199,46 +195,48 @@ export default class Browse extends Component {
           <Text style={styles.text}>Insurance</Text>
         </Card>
        </TouchableOpacity>
-                              
+
       </View>
 
-      <View style={styles.view}>
-       
-       <TouchableOpacity onPress={() => navigate('')}>
+      {/* <View style={styles.view}>
+
+      <TouchableOpacity onPress={() => navigate('')}>
         <Card style={styles.card}>
           <Image source={require('../assets/images/browse-icons/scan-pay.png')} style={styles.image} />
           <Text style={styles.text}>Scan Pay</Text>
         </Card>
        </TouchableOpacity>
 
-       <TouchableOpacity>
+       </View> */}
+
+       {/* <TouchableOpacity>
         <Card style={styles.card}>
           <Image source={require('../assets/images/browse-icons/profile.png')} style={styles.image} />
           <Text style={styles.text}>Profile</Text>
         </Card>
        </TouchableOpacity>
-       
-       </View>
-       
-      <View style={styles.view}>
-       
+
        <TouchableOpacity>
         <Card style={styles.card}>
           <Image source={require('../assets/images/browse-icons/settings.png')} style={styles.image} />
           <Text style={styles.text}>Settings</Text>
         </Card>
        </TouchableOpacity>
+                              
+      </View>
 
-       <TouchableOpacity  onPress={() => navigate('Welcome')}>
+      <View style={styles.view}>
+       
+      <TouchableOpacity  onPress={() => navigate('Welcome')}>
         <Card style={styles.card}>
           <Image source={require('../assets/images/browse-icons/logout.png')} style={styles.image} />
           <Text style={styles.text}>Logout</Text>
         </Card> 
        </TouchableOpacity>
-                                  
-      </View>
-
-     </ScrollView>
+       
+       </View> */}
+       
+     {/* </ScrollView> */}
     </View>
     
    </ImageBackground>
@@ -261,8 +259,8 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     flex: 1,
-    width: null,
-    height: null,
+    width: '100%',
+    height: '100%',
     resizeMode: 'cover'
    },
    screen: {
@@ -271,13 +269,13 @@ const styles = StyleSheet.create({
     alignItems: 'center'
    },
    browse: {
-    fontSize: 25,
+    fontSize: 21,
     fontWeight: "500",
     position: "relative",
     paddingRight: 195,
     color: '#932BAD',
-    marginTop: 5,
-    marginBottom: 5
+    marginTop: 3,
+    marginBottom: 3
    },
    view: {
     flex: 1,
@@ -286,24 +284,27 @@ const styles = StyleSheet.create({
    },
    card: {
     flex: 1,
-    width: 150,
-    height: 100,
+    width: 105,
+    height: 70,
     alignItems: 'center',
-    margin: 10,
+    margin: 5,
    },
    cardTwo: {
     flex: 1,
-    width: 130,
-    height: 80,
+    width: 100,
+    height: 55,
     alignItems: 'center',
-    margin: 3,
+    marginTop: 5,
+    marginLeft: 7,
+    marginRight: 7,
+    marginBottom: 3,
     marginTop: 9,
     padding: null,
    },
    text: {
-    fontSize: 11,
+    fontSize: 9,
     fontWeight: 'bold',
-    margin: 5,
+    margin: 3,
     alignContent: 'center',
    },
    textTwo: {
@@ -319,17 +320,18 @@ const styles = StyleSheet.create({
     marginTop: 15,
    },
    image: {
-    width: '50%',
-    height: '50%',
-    margin: 5,
-    alignContent: 'center'
-   },
-   imageTwo: {
-    width: 15,
-    height: 15,
-    alignContent: "center",
+    width: 25,
+    height: 25,
     padding: null,
     margin: 2,
+    alignContent: "center",
+   },
+   imageTwo: {
+    width: 18,
+    height: 18,
+    alignContent: "center",
+    padding: null,
+    margin: 5,
     marginTop: 25,
    },
 });
